@@ -12,7 +12,10 @@ let PORT = 3030;
 const STATUS_USER_ERROR = 422;
 
 server.get('/compare', (req, res) => {
-  res.send("Testing...");
+  request('https://api.coindesk.com/v1/bpi/currentprice/USD.json', (error, response, body) => {
+    res.send(body);
+ 
+  });
 });
 
 
