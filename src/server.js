@@ -24,8 +24,10 @@ server.get('/compare', (req, res) => {
     let parseObject = JSON.parse(body);
     previous = Object.values(parseObject.bpi); 
     previous = previous[0];
+    let difference = current - previous;
 
-    res.send({current, previous});
+
+    res.send({current, previous, difference});
   });
 });
 
