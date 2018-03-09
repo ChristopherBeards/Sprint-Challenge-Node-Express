@@ -31,6 +31,11 @@ server.get('/compare', (req, res) => {
   });
 });
 
+server.get('*', (req, res) => {
+  res.status(STATUS_USER_ERROR);
+  res.send("Page not found");
+});
+
 
 server.listen(3030, (err) => {
   if (err) {
